@@ -304,7 +304,7 @@ function fibonacciSequence(num) {
 
 // const cambios = async function retriveData() {
 //     await fetch('https://api.weatherapi.com/v1/current.json?key=54d31babced041509ac221222200409&q=London&aqi=no')
-        // .then(resp => resp.json())
+//         .then(resp => resp.json())
 //         .then(data => {
 //             results = data
 //             console.log(results)
@@ -314,3 +314,162 @@ function fibonacciSequence(num) {
 
 
 // console.log(cambios())
+
+// let array = [1, 3, 4, 6, 8, 9, 5, 9] //array inicial
+// // [2, 6, 8, 12, 16, 18, 10, 18] // array final
+
+// function multiplicaPorDos(array) {
+//     let multiplica = []
+
+//     for(let i = 0; i < array.length; i++) {
+        // array[i] *= 2 // array[i] = array[i] * 2
+        // multiplica.push(array[i] * 2);
+//     }
+
+//     return multiplica;
+// }
+
+// console.log(multiplicaPorDos(array)) //array final
+// console.log(array) // arrayinicial
+
+// let calificaciones = [10, 9, 2, 6, 9, 5, 8, 7, 6, 8]
+
+// function promedioCalificaciones(calif) {
+//     let acumulador = 0;
+
+//     for(let i = 0; i < calif.length; i++) {
+//         acumulador += calif[i];
+//     }
+
+//     return acumulador / calif.length;
+// }
+
+// console.log(promedioCalificaciones(calificaciones))
+
+// let john = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     birthYear: {
+//         dia: 15,
+//         mes: 09,
+//         anio: 1990
+//     }
+// }
+
+// john.firstName = 'Jane'
+
+// john['firstName'] = 'Max'
+
+// console.log(john.firstName);
+// console.log(john['firstName']);
+
+// let nombreCompleto = `${john.firstName} ${john.lastName}, fecha de nacimiento ${john.birthYear.dia}/${john.birthYear.mes}/${john.birthYear.anio}`
+
+// console.log(nombreCompleto);
+
+// let auto = {
+//     brand: 'Nissan',
+//     model: 'Sentra',
+//     year: 2020
+// }
+
+// // // [
+// //     ['brand', 'Nissan'],
+// //     ['model', 'Sentra'],
+// //     ['year', 2020]
+// // ]  // Resultado esperado
+
+// function keyValuePairs(objeto) {
+//     let keys = Object.keys(objeto);
+//     let pares = [];
+
+//     for(let i = 0; i < keys.length; i++) {
+//         pares.push([keys[i], objeto[keys[i]]]);
+//     }
+
+//     return pares;
+// }
+
+// console.log(keyValuePairs(auto));
+
+// function objetoFromArray(array) {
+//     let objeto = {}
+
+//     for( let i = 0; i < array.length; i++) {
+//         objeto[array[i][0]] = array[i][1]
+//     }
+
+//     return objeto;
+// }
+
+// // let arregloDeObjeto = keyValuePairs(auto);
+
+// let objetoFromArray = Object.fromEntries(arregloDeObjeto)
+
+// console.log(objetoFromArray(keyValuePairs(auto)))
+
+// let john = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     birthYear: 1990,
+//     calculateAge: function(birthYear) {
+//         let today = new Date();
+//         let year = today.getFullYear();
+
+//         return year - birthYear
+//     }
+// }
+
+// let conejo = {
+//     color: 'blanco',
+//     tamanio: 'pequeño',
+//     raza: 'leporino',
+//     brinca: function() {
+//         console.log('estoy broincando!')
+//     },
+//     comer: function() {
+//         console.log(('como zanahorias!'))
+//     }
+// }
+
+// let john = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     birthYear: 1990,
+//     calculateAge: function() {
+//         let today = new Date();
+//         let year = today.getFullYear();
+
+//         this.age = year - this.birthYear
+//     }
+// }
+
+// console.log(john)
+// console.log(john.calculateAge());
+// console.log(john)
+
+let singers = [
+    { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+    { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+    { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+    { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+  ];
+
+function pluck(list, propertyName) {
+    let values = [];
+
+    for(let i = 0; i < list.length; i++) {
+        values.push(list[i][propertyName])
+    }
+
+    return values;
+}
+
+console.log( pluck(singers, 'name') );
+// ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+
+console.log( pluck(singers, 'band') );
+// ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+
+console.log( pluck(singers, 'born') );
+// [1948, 1950, 1967, 1964]
