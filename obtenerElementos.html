@@ -1,0 +1,16 @@
+<body>
+    <h1 id="title">Document Object Model</h1>
+    <p class="subtitle">Hello World!</p>
+    <p>Here is a
+      <a href="#">link</a>
+    </p>
+
+    <script>
+      let title = document.getElementById('title');
+      let body = document.getElementsByTagName('body')[0];
+      let subtitle = document.getElementsByClassName('subtitle')[0]
+      console.log(title); // <h1 id="title">Document Object Model</h1>
+      console.log(body); // <h1 id="title">Document Object Model</h1>
+      console.log(subtitle); // <h1 id="title">Document Object Model</h1>
+    </script>
+</body>

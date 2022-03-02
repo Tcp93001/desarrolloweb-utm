@@ -448,28 +448,377 @@ function fibonacciSequence(num) {
 // console.log(john.calculateAge());
 // console.log(john)
 
-let singers = [
-    { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
-    { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
-    { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
-    { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
-  ];
+// let singers = [
+//     { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+//     { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+//     { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+//     { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+//   ];
 
-function pluck(list, propertyName) {
-    let values = [];
+// function pluck(list, propertyName) {
+//     let values = [];
 
-    for(let i = 0; i < list.length; i++) {
-        values.push(list[i][propertyName])
+//     for(let i = 0; i < list.length; i++) {
+//         values.push(list[i][propertyName])
+//     }
+
+//     return values;
+// }
+
+// console.log( pluck(singers, 'name') );
+// // ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+
+// console.log( pluck(singers, 'band') );
+// // ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+
+// console.log( pluck(singers, 'born') );
+// // [1948, 1950, 1967, 1964]7
+
+// let john = {
+//     name: 'John',
+//     birthYear: 1990,
+//     job: 'Developer'
+// }
+
+// let mary = {
+//     name: 'Mary',
+//     birthYear: 1979,
+//     job: 'Designer'
+// }
+
+// let max = {
+//     name: 'Max',
+//     birthYear: 1993,
+//     job: 'QA'
+// }
+
+// let Person = function(name, birthYear, job){
+//     this.name = name;
+//     this.birthYear = birthYear;
+//     this.job = job
+// }
+
+// let ricardo = new Person('Ricardo', 1987, 'Sales');
+// let john = new Person('John', 1990, 'Developer');
+// let jane = new Person('Jane', 1998, 'Designer');
+// let max = new Person('Max', 1978, 'insurance');
+
+// let Vec = function(equis, ye) {
+//     this.x = equis;
+//     this.y = ye;
+// }
+
+// Vec.prototype.plus = function(other) {
+//     return new Vec(this.x + other.x, this.y + other.y)
+// }
+
+// Vec.prototype.minus = function(other) {
+//     return new Vec(this.x - other.x, this.y - other.y)
+// }
+
+// Vec.prototype.magnitude = function() {
+//     return Math.sqrt(this.x * this.x + this.y * this.y)
+// }
+
+// let vec1 = new Vec(1, 2);
+// let vec2 = new Vec(2, 3);
+
+// console.log(vec1.plus(vec2)); // Vec { x: 3, y: 5 }
+// console.log(vec1.minus(vec2)); // Vec { x: -1, y: -1 }
+// console.log(vec1.magnitude()); // 2.23606797749979
+
+// let Person = function(nombre) {
+//     this.nombre = nombre;
+// }
+
+// let Developer = function(nombre, skills, yearsOffExperience) {
+//     Person.call(this, nombre);
+
+//     this.skills = skills;
+//     this.yearsOffExperience = yearsOffExperience;
+// }
+
+// let john = new Developer('John', 'JAvasscript', 10)
+
+// let Group = function() {
+//     this.members = []
+// }
+
+// Group.prototype.add = function(value){
+//     if(!this.has(value)) {
+//         this.members.push(value);
+//     }
+// }
+
+// Group.prototype.has = function(value) {
+//     return this.members.includes(value)
+// }
+
+// Group.from = function(lista) {
+//     let group = new Group();
+
+//     for(let i = 0; i < lista.length; i++){
+//         group.add(lista[i])
+//     }
+
+//     return group;
+// }
+
+// let array = [1, 2, 3, 1, 2 ,3 , 4]
+
+// console.log(new Group.from(array))
+
+// let Person = function(name, birthYear, job = 'Developer') {
+//     this.name = name;
+//     this.birthYear = birthYear;
+//     this.job = job;
+// }
+
+// Person.prototype.calculateAge = function() {
+//     let today = new Date();
+//     let year = today.getFullYear();
+
+//     console.log(year - this.birthYear);
+// }
+
+// let john = new Person('John', 1990);
+// let max = new Person('Max', 1985, 'Teacher');
+// let jane = new Person('Jane', 1985, 'Designer');
+// // let ricardo = new Person('Ricardo', 1998)
+
+// let Triangle = function(a, b, c) {
+//     this.a = a;
+//     this.b = b;
+//     this.c = c;
+// }
+
+// Triangle.prototype.getPerimeter = function(){
+//     return this.a + this.b + this.c;
+// }
+
+// let triangle = new Triangle(1, 2, 3);
+
+// console.log(triangle); // Triangle { a: 1, b: 2, c: 3 }
+// console.log(triangle.getPerimeter()); // 6
+
+// Sexta sesión
+
+// let numbers = [1, 2, 3, 4, 5];
+// let doubles = [];
+
+// for(let i = 0; i < numbers.length; i++) {
+// 	doubles.push(numbers[i] * 2);
+// }
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+//
+
+// let numbers = [1, 2, 3, 4, 5];
+
+// let doubles = numbers.map(function(number) {
+//     return number * 2;
+// })
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+
+// numbers = [1, 2, 3, 4, 5, 6];
+
+// doubles = numbers.map(function(number) {
+//     return number * 2;
+// })
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+// let auto = {
+//     brand: 'Nissan',
+//     model: 'Sentra',
+//     year: 2020
+// }
+
+// function addColor(car) {
+//     let newCar = Object.assign({}, car, {color: 'Black'})
+
+//     return newCar;
+// }
+
+// console.log('auto antes de llamad addColor ', auto)
+
+// let elMismoAuto = addColor(auto)
+
+// console.log('auto despues de llamad addColor ', elMismoAuto)
+
+// console.log('Son el mismo auto?', auto === elMismoAuto);
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// console.log(add(3, 2)) // resultado: 5
+// console.log(add(3, 2)) // resultado: 5
+
+// function randomNumber() {
+//     return Math.floor(Math.random() * 10);
+// }
+
+// console.log(randomNumber())
+// console.log(randomNumber())
+
+// function addColor(car) {
+//     let newCar = Object.assign({}, car, {color: 'Black'})
+
+//     return newCar;
+// }
+
+// let cart = [
+//     {
+//         item: 'Laptop',
+//         quantity: 2
+//     }
+// ]
+
+// let newCartExterna;
+
+// function addItemToCart(cart, item, quantity) {
+//     let newCart = cart.map(function(element) {
+//         return element;
+//     })
+
+//     newCart.push({
+//         item: item,
+//         quantity: quantity
+//     })
+
+//     newCartExterna = newCart
+// }
+
+// cart = newCartExterna;
+
+// console.log('cart antes de agregar cosas', cart)
+
+// console.log('cart despues de agregar un celular ', addItemToCart(cart, 'celular', 3))
+
+// console.log('cart antes de agregar cosas', cart)
+
+// let square = function(number) {
+//     return number * number;
+// }
+
+// let squareOfFour = square(6) // 36
+
+// console.log(squareOfFour)
+
+// var numbers = [1, 2, 3, 4, 5];
+// var doubles = numbers.map(elem => elem * 2);
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+// let evenNumbers = numbers.filter(function(number) {
+//     return number % 2 === 0;
+// })
+
+// console.log(evenNumbers)
+
+// let unevenNumbers = numbers.filter(function(number) {
+//     return number % 2 !== 0;
+// })
+
+// console.log(unevenNumbers)
+
+// let suma = numbers.reduce(function(acumulador, valorActual) {
+//     return acumulador + valorActual
+// }, 0)
+
+
+// var numbers = [1, 2, 3, 4, 5];
+
+// let listaSuma = numbers.reduce(function(acumulador, elementoActual){
+//     console.log('acumulador', acumulador)
+//     if (acumulador.length === 0) {
+//         acumulador.push(elementoActual)
+//     } else {
+//         let sumaElementos = acumulador[acumulador.length - 1] + elementoActual
+//         acumulador.push(sumaElementos)
+//     }
+
+//     return acumulador;
+// }, [])
+
+// // console.log(suma)
+// console.log(listaSuma)
+
+// let number = 12345;
+
+// // let string = number.toString(); // '12345'
+// // let array = string.split('');
+
+// let array = number.toString().split('');
+
+// console.log(number)
+// // console.log(string)
+// console.log(array)
+
+// let arrayOfNumbers = array.map(Number)
+// console.log(arrayOfNumbers)
+
+// let sum = arrayOfNumbers.reduce(function(acumulador, valorActual) {
+//     return acumulador + valorActual;
+// }, 0)
+
+// function sumaDeDigitos(numero) {
+//     return  numero
+//             .toString()
+//             .split('')
+//             .map(Number)
+//             .reduce(function(acumulador, valorActual) {
+//                 return acumulador + valorActual;
+//             }, 0)
+// }
+
+// console.log(sumaDeDigitos(8372829372374824))
+
+// function flatten(arrays) {
+//     return arrays.reduce(function(acumulador, valorActual){
+//         return acumulador.concat(valorActual)
+//     }, [])
+// }
+
+// let arrays = [[1, 2, 3], [4, 5], [6], [7, 8, 9, 10]];
+// let array = flatten(arrays);
+
+// console.log(array); // [1, 2, 3, 4, 5, 6]
+
+// function compact(array) {
+//     return array.filter(function(element) {
+//         return !!element
+//     })
+// }
+
+// let array = [0, 1, false, 2, '', 3, [], {}, NaN, Infinity];
+// let compactedArray = compact(array);
+
+// console.log(compactedArray); // [1, 2, 3]
+
+function loop(start, test, update, body) {
+    for(let value = start; test(value); value = update(value)){
+        body(value)
     }
-
-    return values;
 }
 
-console.log( pluck(singers, 'name') );
-// ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+let test = function(n) {
+return n > 0;
+}
 
-console.log( pluck(singers, 'band') );
-// ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+let update = function(n) {
+return n - 1;
+}
 
-console.log( pluck(singers, 'born') );
-// [1948, 1950, 1967, 1964]
+loop(0, test, update, console.log);
+  // 3
+  // 2
+  // 1

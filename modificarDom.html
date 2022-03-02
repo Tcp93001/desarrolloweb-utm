@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Ejemplo 2: Cambiando el DOM</title>
+  </head>
+  <body>
+    <p>One</p>
+    <p>Two</p>
+    <p>Three</p>
+
+    <button onclick="cambiarOrden()">
+        Cambia el orden de los textos
+    </button>
+
+    <script>
+
+        let paragraphs = document.body.getElementsByTagName('p');
+
+        console.log('Primer node: ', paragraphs[0])
+        console.log('Segundo node: ', paragraphs[1])
+        console.log('Tercer node: ', paragraphs[2])
+
+        function cambiarOrden() {
+            document.body.insertBefore(paragraphs[2], paragraphs[0]);
+
+            console.log('Primer node: ', paragraphs[0])
+            console.log('Segundo node: ', paragraphs[1])
+            console.log('Tercer node: ', paragraphs[2])
+        }
+
+
+
+    </script>
+  </body>
+</html>
